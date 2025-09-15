@@ -18,7 +18,7 @@ class Director implements DirectorInterface {
   getCoffeeBreak() {
     return "Getting a coffee break";
   }
-  
+
   workDirectorTasks() {
     return "Getting to director tasks";
   }
@@ -43,4 +43,12 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
+
+function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+function executeWork(employee: Director | Teacher){
+ return isDirector(employee) ? employee.workDirectorTasks() : employee.workTeacherTasks()
+}
 
