@@ -19,4 +19,14 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
-console.log(director1);
+
+interface printTeacherParams{
+  firstName : string;
+  lastName : string
+}
+
+function printTeacher({firstName, lastName} : printTeacherParams){
+  return `${firstName[0]}. ${lastName}`
+}
+
+console.log(printTeacher({firstName: "Kofi", lastName: "Mintah"}))
