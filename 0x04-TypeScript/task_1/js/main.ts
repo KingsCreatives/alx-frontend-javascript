@@ -30,3 +30,25 @@ function printTeacher({firstName, lastName} : printTeacherParams){
 }
 
 console.log(printTeacher({firstName: "Kofi", lastName: "Mintah"}))
+
+interface studentProps extends printTeacherParams{
+}
+
+class StudentClass{
+   firstName : string
+   lastName : string
+
+  constructor({firstName, lastName}:studentProps){
+      this.firstName = firstName
+      this.lastName = lastName
+  }
+
+  workOnHomework(){
+    return 'Currently working'
+  }
+
+  displayName(){
+     return `${this.firstName}`
+  }
+
+}
